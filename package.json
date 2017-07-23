@@ -4,7 +4,9 @@
   "description": "My blog, nothing special just boring and ramblings.",
   "main": "web.js",
   "scripts": {
-    "test": "eslint ."
+    "test": "eslint .",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -19,9 +21,11 @@
     "hogan-express": "^0.5.2",
     "marked": "^0.3.6",
     "moment": "^2.18.1",
-    "walkdir": "0.0.11"
+    "walkdir": "0.0.11",
+    "snyk": "^1.36.2"
   },
   "devDependencies": {
     "eslint": "^4.3.0"
-  }
+  },
+  "snyk": true
 }
