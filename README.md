@@ -12,13 +12,13 @@ The homepage shows a list of blog posts, sorted by their date.
 Meta data about posts are in the `posts/meta` directory and are JSON files, these can have the following attributes:
 
 - `title` The title of the post
-- `date` The date of the post (in ISO format)
-- `author` The name of the person who wrote this post
+- `date` The date of the post (in [ISO format](https://en.wikipedia.org/wiki/ISO_8601), you can find the date + time using `new Date().toISOString()` in a javascript console)
+- `author` The name of the person who wrote this post (optional)
 
 
 ## Backend
 
-The actual server is written in node.js running a simple [express](https://npm.im/express) app, which in my setup is fronted by [Varnish](http://varnish-cache.org) for caching and then [CloudFlare](https://cloudflae.com) for global distribution.
+The actual server is written in node.js running a simple [express](https://npm.im/express) app, which in my setup is fronted by [Varnish](http://varnish-cache.org) for caching and then [CloudFlare](https://cloudflare.com) for global distribution.
 
 
 ## Analytics
