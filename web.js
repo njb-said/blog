@@ -11,7 +11,7 @@ var postEmitter = walkdir('posts', {max_depth: 1});
 
 postEmitter.on('file', function(file, stat) {
     var str = file.split(windows ? '\\posts\\' : '/posts/')[1].split('.')[0];
-    var json = JSON.parse(fs.readFileSync(windows ? ('posts\\meta\\' + str + '.json') : ('posts/meta/' + str[1] + '.json'), 'utf8'));
+    var json = JSON.parse(fs.readFileSync(windows ? ('posts\\meta\\' + str + '.json') : ('posts/meta/' + str + '.json'), 'utf8'));
     var content = fs.readFileSync(file, 'utf8');
     json.date = new Date(json.date);
     json.content = content;
