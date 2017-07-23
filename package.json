@@ -1,0 +1,27 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "My blog, nothing special just boring and ramblings.",
+  "main": "web.js",
+  "scripts": {
+    "test": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/njb-said/blog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/njb-said/blog/issues"
+  },
+  "homepage": "https://github.com/njb-said/blog#readme",
+  "dependencies": {
+    "express": "^4.15.3",
+    "hogan-express": "^0.5.2",
+    "marked": "^0.3.6",
+    "moment": "^2.18.1",
+    "walkdir": "0.0.11"
+  },
+  "devDependencies": {
+    "eslint": "^4.3.0"
+  }
+}

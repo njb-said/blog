@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis');
+
+html, body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Calibri';
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Dosis', 'Calibri';
+}
+
+a {
+    text-decoration: none;
+    color: #2196f3;
+    transition: color 100ms ease-in-out;
+    will-change: color;
+}
+
+a:hover {
+    color: #1565c0;
+}
+
+.blog {
+    margin: 1rem;
+    display: block;
+    box-sizing: border-box;
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.blog .blog-title {
+    text-align: center;
+    font-size: 4.5rem;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 1.3rem;
+    padding-bottom: 1.3rem;
+}
+
+.blog .blog-title a {
+    color: inherit;
+}
+
+.blog .blog-post-tease:not(:first-child) {
+    border-top: 1px solid #ddd;
+}
+
+.blog .blog-post-tease .tease-title a {
+    color: #234056;
+}
+
+.blog .blog-post-tease .tease-main a {
+    color: #5799ce;
+}
+
+.blog .blog-post .post-title {
+    margin-top: 0;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.blog .blog-post .post-meta {
+    color: #9e9e9e;
+    font-family: 'Dosis', 'Calibri';
+    font-size: 80%;
+    text-align: right;
+}
+
+footer {
+    margin-top: 4rem;
+    text-align: center;
+    color: #9e9e9e;
+}
+
+footer p {
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+footer p.source {
+    color: #b5b5b5;
+    margin: 0;
+}
+
+footer p.source a {
+    color: #5799ce;
+}
+
+@media screen and (max-width: 600px) {
+    .blog {
+        max-width: 80%;
+        margin-top: 2.5rem;
+    }
+}

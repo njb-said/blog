@@ -1,0 +1,11 @@
+<div class="blog-post">
+    <h3 class="post-title">{{post.name}}</h3>
+    {{{ post.content }}}
+
+    <p class="post-meta">
+        Posted {{post.dateString}}
+        {{#post.author}}
+        &nbsp;by {{post.author}}
+        {{/post.author}}
+    </p>
+</div>
