@@ -1,6 +1,8 @@
-# blog
+# blog [![Build Status](https://travis-ci.org/njb-said/blog.svg?branch=master)](https://travis-ci.org/njb-said/blog) [![Known Vulnerabilities](https://snyk.io/test/github/njb-said/blog/badge.svg)](https://snyk.io/test/github/njb-said/blog)
 
 This repository contains the server that powers my blog, as well as all the posts. I can't promise I'll blog often or be remotely interesting, but if you find it somewhat interesting that's fine with me!
+
+Builds are run on [Travis CI](https://travis-ci.org/njb-said/blog) for eslint compatibility and [snyk](https://snyk.io) is used for packge security checks.
 
 ## Posts
 
