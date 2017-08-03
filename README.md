@@ -15,14 +15,17 @@ Meta data about posts are in the `posts/meta` directory and are JSON files, thes
 - `date` The date of the post (in [ISO format](https://en.wikipedia.org/wiki/ISO_8601), you can find the date + time using `new Date().toISOString()` in a javascript console)
 - `author` The name of the person who wrote this post (optional)
 
-You can generate a meta file using the `/new_post` page. This also has a markdown editor ([SimpleMDE](https://npm.im/simplemde)), you can also generate a slug for your post there too.
 
-You can see examples posts in [here](https://github.com/njb-said/blog/tree/master/posts).
+You can generate a meta file using the `/new_post` page. This also has a markdown editor ([SimpleMDE](https://github.com/sparksuite/simplemde-markdown-editor)), you can also generate a slug for your post there too.
+
 
 ## Backend
 
 The actual server is written in node.js running a simple [express](https://npm.im/express) app, which in my setup is fronted by [Varnish](http://varnish-cache.org) for caching and then [CloudFlare](https://cloudflare.com) for global distribution.
 
+The express server will load everything in the `posts` folder at startup and the associated meta files in `posts/meta`.
+
+To change the blog title open `web.js` and change line 41 to the name of your blog, similarly change line 44 to your Google Analytics code to enable this (see below)
 
 ## Analytics
 
