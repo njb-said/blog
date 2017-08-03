@@ -2,7 +2,14 @@
     {{#posts}}
     <div class="blog-post-tease">
         <h2 class="tease-title"><a href="/{{slug}}">{{name}}</a></h2>
-        <div class="tease-main">{{{content}}}</div>
+        <div class="tease-main">
+            {{{snippet}}}
+        </div>
+        <div class="tease-link">
+            {{#isTruncated}}
+            <a href="/{{slug}}">Continue reading &rarr;</a>
+            {{/isTruncated}}
+        </div>
     </div>
     {{/posts}}
 </div>
