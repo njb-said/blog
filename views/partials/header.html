@@ -15,5 +15,54 @@
 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
     <link rel="stylesheet" href="/assets/application.css">
+    {{#editor}}
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/simplemde/1.11.2/simplemde.min.css">
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/simplemde/1.11.2/simplemde.min.js"></script>
+    <script type="text/javascript">
+    var updateMeta = function() {
+        var title = document.querySelectorAll('input[name="postTitle"]')[0].value;
+        document.querySelectorAll('[data-value="title"]')[0].textContent = "\"" + title + "\"";
+        document.querySelectorAll('[data-value="date"]')[0].textContent = "\"" + new Date().toISOString() + "\"";
+
+        var slug = slugify(title);
+        document.querySelectorAll('input[name="postSlug"]')[0].value = slug;
+        document.querySelectorAll('.file-name')[0].textContent = (slug ? slug : 'untitled-post') + '.md';
+
+        var authorEle = document.querySelectorAll('[data-value="author"]')[0];
+        if(document.querySelectorAll('input[name="postAuthor"]')[0].value) {
+            authorEle.classList.remove('bool-false');
+            authorEle.textContent = "\"" + document.querySelectorAll('input[name="postAuthor"]')[0].value + "\"";
+        } else {
+            authorEle.classList.add('bool-false');
+            authorEle.textContent = "false";
+        }
+    };
+
+    window.addEventListener('load', function() {
+        var simplemde = new SimpleMDE({
+            element: document.getElementById('editor'),
+            indentWithTabs: true,
+            placeholder: 'A story about milk and bottles... wait what?'
+        });
+
+        document.querySelectorAll('input[name="postTitle"]')[0].addEventListener('keyup', function() {
+            updateMeta();
+        });
+        document.querySelectorAll('input[name="postAuthor"]')[0].addEventListener('keyup', function() {
+            updateMeta();
+        });
+    });
+
+    // https://gist.github.com/mathewbyrne/1280286
+    function slugify(text) {
+      return text.toString().toLowerCase()
+        .replace(/\s+/g, '-')           // Replace spaces with -
+        .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+        .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+        .replace(/^-+/, '')             // Trim - from start of text
+        .replace(/-+$/, '');            // Trim - from end of text
+    }
+    </script>
+    {{/editor}}
     <link rel="stylesheet" href="/assets/custom.css">
 </head>

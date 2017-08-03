@@ -1,0 +1,37 @@
+<div class="blog-creator">
+    <h3 class="creator-title">Create a blog post</h3>
+    <p>This page will generate the necessary files for a blog post including the meta JSON file, containing date, title and optionally author .</p>
+    <p>You can also preview your post within the editor below.</p>
+    <p>Once you have finished writing your post copy the markdown into a new markdown (.md) file in the posts directory, it's name should be the url slug of your post.</p>
+
+    <form method="post" data-action="create-post">
+        <div class="post-information">
+            <div class="field post-title">
+                <input type="text" name="postTitle" required placeholder="The title of your post">
+            </div>
+            <div class="field post-slug">
+                <input type="text" name="postSlug" placeholder="The URL slug of your post (Auto-generated)">
+            </div>
+            <div class="field post-author">
+                <input type="text" name="postAuthor" placeholder="Who wrote this post? (Optional)">
+            </div>
+        </div>
+        <div class="post-body">
+            <textarea id="editor"></textarea>
+        </div>
+        <div class="post-meta">
+            <div class="meta-heading">
+                <span class="directory-name">posts</span>
+                <span class="divider">/</span>
+                <span class="directory-name">meta</span>
+                <span class="divider">/</span>
+                <span class="file-name">untitled-post</span><span class="file-extension">.json</span>
+            </div>
+<pre id="post-meta-pre">{
+    <span class="key">"title"</span> : <span class="value" data-value="title">""</span>,
+    <span class="key">"date"</span> : <span class="value" data-value="date">""</span>,
+    <span class="key">"author"</span> : <span class="value bool-false" data-value="author">false</span>
+}</pre>
+        </div>
+    </form>
+</div>

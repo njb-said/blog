@@ -66,6 +66,7 @@ a:hover {
     color: #337fb9;
 }
 
+.blog .blog-post .post-title, .blog .blog-creator .creator-title {
     margin-top: 0;
     font-size: 3rem;
     margin-bottom: 1.5rem;
@@ -76,6 +77,98 @@ a:hover {
     font-family: 'Dosis', 'Calibri';
     font-size: 80%;
     text-align: right;
+}
+
+.blog .blog-creator .post-information {
+    display: block;
+    margin-bottom: 1rem;
+    padding: 0 5px;
+    box-sizing: border-box;
+}
+
+.blog .blog-creator .post-information .field {
+    width: 33%;
+    margin-right: 1rem;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.blog .blog-creator .post-information .field input {
+    width: 100%;
+    outline: 0;
+    border: 0;
+    font-family: 'Dosis', 'Calibri';
+    box-sizing: border-box;
+    font-size: 20px;
+    line-height: 1.5;
+    background: transparent;
+    margin: 0;
+    display: block;
+    min-height: 18px;
+    padding: 10px 15px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    color: #2C3E50;
+    border-radius: 3px;
+    transition: all 150ms ease-in-out;
+}
+
+.blog .blog-creator .post-information .field.post-slug {
+    width: 30%;
+}
+.blog .blog-creator .post-information .field.post-author {
+    width: 22%;
+    float: right;
+}
+
+.blog .blog-creator .post-meta {
+    display: block;
+    margin: 0 0 10px;
+    font-size: 15px;
+    color: #333;
+    border: 1px #ddd solid;
+    background-color: #f7f7f7;
+    border-radius: 3px;
+}
+
+.blog .blog-creator .post-meta .meta-heading {
+    padding: 1rem;
+    font-size: 20px;
+    border-bottom: 1px #c1c1c1 solid;
+    background-color: white;
+}
+
+.blog .blog-creator .post-meta .meta-heading .directory-name {
+    color: #5f1c1c;
+}
+
+.blog .blog-creator .post-meta .meta-heading .file-name {
+    color: #24749c;
+}
+
+.blog .blog-creator .post-meta .meta-heading .file-extension {
+    color: #455a64;
+}
+
+.blog .blog-creator .post-meta .meta-heading .divider {
+    color: #607d8b;
+}
+
+.blog .blog-creator .post-meta pre {
+    word-wrap: break-word;
+    padding: 10px;
+}
+
+.blog .blog-creator .post-meta pre .key {
+    color: #656500;
+}
+
+.blog .blog-creator .post-meta pre .value {
+    color: #0e1773;
+}
+
+.blog .blog-creator .post-meta pre .value.bool-false {
+    color: #800e0e;
 }
 
 footer {
@@ -103,5 +196,9 @@ footer p.source a {
     .blog {
         max-width: 80%;
         margin-top: 2.5rem;
+    }
+
+    .blog .blog-post .post-title {
+        font-size: 2.2rem;
     }
 }

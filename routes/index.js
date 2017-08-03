@@ -31,6 +31,10 @@ router.get('/', function(req, res, next) {
     return res.render('index', {posts: sortedPosts});
 });
 
+router.get('/new_post', function(req, res, next) {
+    return res.render('new_post', {title: 'Create a post', editor: true});
+});
+
 /* global _posts */
 router.get('/:slug', function(req, res, next) {
     var slug = req.params.slug;

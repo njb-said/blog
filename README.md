@@ -15,6 +15,9 @@ Meta data about posts are in the `posts/meta` directory and are JSON files, thes
 - `date` The date of the post (in [ISO format](https://en.wikipedia.org/wiki/ISO_8601), you can find the date + time using `new Date().toISOString()` in a javascript console)
 - `author` The name of the person who wrote this post (optional)
 
+You can generate a meta file using the `/new_post` page. This also has a markdown editor ([SimpleMDE](https://npm.im/simplemde)), you can also generate a slug for your post there too.
+
+You can see examples posts in [here](https://github.com/njb-said/blog/tree/master/posts).
 
 ## Backend
 
