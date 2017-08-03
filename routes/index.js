@@ -7,22 +7,22 @@ var cacheTime = ((process.env.CACHE_HOURS || 24) * (60 * 60));
 
 var sortedPosts = Object.keys(_posts);
 
-sortedPosts.sort(function(a, b) {
-    return a.date - b.date;
-});
-
 sortedPosts = sortedPosts.map(function(i) {
     var obj = _posts[i];
     obj.rawContent = obj.content;
-    // Don't need to sanitize this
     obj.content = marked(obj.content, {breaks: true, sanitize: true});
 
     var past = new Date();
     past.setDate(past.getDate() - 7);
+    obj.date = new Date(obj.date);
     obj.dateString = past <= obj.date ? moment(obj.date).fromNow() : 'on ' + moment(obj.date).format('Do MMMM YY, hA');
 
     obj.slug = i;
     return obj;
+});
+
+sortedPosts.sort(function(a, b) {
+    return b.date - a.date;
 });
 
 router.get('/', function(req, res, next) {
