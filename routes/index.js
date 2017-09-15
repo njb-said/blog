@@ -13,6 +13,7 @@ sortedPosts = sortedPosts.map(function(i) {
     obj.content = marked(obj.content, {breaks: true, sanitize: true});
     obj.snippet = obj.content.length > 512 ? obj.content.substring(0, 512) + '&hellip;' : obj.content;
     obj.isTruncated = obj.content.length > 512;
+    obj.skip = obj.index == false && typeof obj.index != 'undefined';
 
     var past = new Date();
     past.setDate(past.getDate() - 7);

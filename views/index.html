@@ -1,5 +1,6 @@
 <div class="blog-listing">
     {{#posts}}
+    {{^skip}}
     <div class="blog-post-tease cf">
         <h2 class="tease-title"><a href="/{{slug}}">{{title}}</a></h2>
         <div class="tease-main">
@@ -11,5 +12,6 @@
             {{/isTruncated}}
         </div>
     </div>
+    {{/skip}}
     {{/posts}}
 </div>
