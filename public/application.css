@@ -1,5 +1,36 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis');
 
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
+
 html, body {
     padding: 0;
     margin: 0;
@@ -42,8 +73,17 @@ a:hover {
     color: inherit;
 }
 
+.blog .blog-post-tease {
+    overflow: hidden;
+}
+
 .blog .blog-post-tease:not(:first-child) {
     border-top: 1px solid #ddd;
+}
+
+.blog .blog-post-tease .tease-title {
+    font-size: 1.5rem;
+    display: block;
 }
 
 .blog .blog-post-tease .tease-title a {

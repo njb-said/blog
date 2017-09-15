@@ -45,7 +45,7 @@ router.get('/:slug', function(req, res, next) {
             var post = _posts[slug];
 
             res.setHeader('Cache-Control', 'public, max-age: ' + cacheTime);
-            return res.render('post', {title: post.name, post: post});
+            return res.render('post', {title: post.title, post: post});
         } else {
             return res.status(404).render('error', {title: 'Not Found'});
         }
