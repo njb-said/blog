@@ -13,6 +13,16 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
 
+    <meta property="og:site_name" content="{{system.title}}" />
+    {{#post}}
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="{{post.title}}" />
+    <meta property="og:description" content="{{post.socialSnippet}}" />
+    <meta property="og:url" content="https://{{post.url}}" />
+    <meta property="article:published_time" content="{{post.jsonDate}}" />
+    <meta property="article:modified_time" content="{{post.jsonDate}}" />
+    {{/post}}
+
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
     <link rel="stylesheet" href="/assets/application.css?v1">
     {{#editor}}

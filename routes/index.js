@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var marked = require('marked');
+var htt = require('html-to-text');
 var moment = require('moment');
 var cacheTime = ((process.env.CACHE_HOURS || 24) * (60 * 60));
 
@@ -12,12 +13,15 @@ sortedPosts = sortedPosts.map(function(i) {
     obj.rawContent = obj.content;
     obj.content = marked(obj.content, {breaks: true, sanitize: true});
     obj.snippet = obj.content.length > 512 ? obj.content.substring(0, 512) + '&hellip;' : obj.content;
+    obj.socialSnippet = htt.fromString(obj.content, {wordwrap: null, ignoreHref: true, ignoreImage: true, preserveNewlines: false}).replace(/(\r\n|\n|\r)/gm," ");
+    obj.socialSnippet = obj.socialSnippet.length > 256 ? obj.socialSnippet.substring(0, 256) + '...' : obj.socialSnippet;
     obj.isTruncated = obj.content.length > 512;
     obj.skip = obj.index == false && typeof obj.index != 'undefined';
 
     var past = new Date();
     past.setDate(past.getDate() - 7);
     obj.date = new Date(obj.date);
+    obj.jsonDate = obj.date.toISOString();
     obj.dateString = past <= obj.date ? moment(obj.date).fromNow() : 'on ' + moment(obj.date).format('Do MMMM YY, hA');
 
     obj.slug = i;
@@ -45,6 +49,7 @@ router.get('/:slug', function(req, res, next) {
         if(_posts.hasOwnProperty(slug)) {
             var post = _posts[slug];
 
+            post.url = req.headers['host'] + '/' + slug;
             res.setHeader('Cache-Control', 'public, max-age: ' + cacheTime);
             return res.render('post', {title: post.title, post: post});
         } else {
