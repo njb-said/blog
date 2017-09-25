@@ -13,7 +13,7 @@ sortedPosts = sortedPosts.map(function(i) {
     obj.rawContent = obj.content;
     obj.content = marked(obj.content, {breaks: true, sanitize: true});
     obj.snippet = obj.content.length > 512 ? obj.content.substring(0, 512) + '&hellip;' : obj.content;
-    obj.socialSnippet = htt.fromString(obj.content, {wordwrap: null, ignoreHref: true, ignoreImage: true, preserveNewlines: false}).replace(/(\r\n|\n|\r)/gm," ");
+    obj.socialSnippet = htt.fromString(obj.content, {wordwrap: null, ignoreHref: true, ignoreImage: true, preserveNewlines: false}).replace(/(\r\n|\n|\r)/gm, ' ');
     obj.socialSnippet = obj.socialSnippet.length > 256 ? obj.socialSnippet.substring(0, 256) + '...' : obj.socialSnippet;
     obj.isTruncated = obj.content.length > 512;
     obj.skip = obj.index == false && typeof obj.index != 'undefined';
