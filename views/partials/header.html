@@ -36,7 +36,7 @@
 
         var slug = slugify(title);
         document.querySelectorAll('input[name="postSlug"]')[0].value = slug;
-        document.querySelectorAll('.file-name')[0].textContent = (slug ? slug : 'untitled-post') + '.md';
+        document.querySelectorAll('.file-name')[0].textContent = (slug ? slug : 'untitled-post');
 
         var authorEle = document.querySelectorAll('[data-value="author"]')[0];
         if(document.querySelectorAll('input[name="postAuthor"]')[0].value) {
