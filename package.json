@@ -19,8 +19,8 @@
   "dependencies": {
     "express": "^4.15.3",
     "hogan-express": "^0.5.2",
-    "html-to-text": "^3.3.0",
-    "marked": "^0.3.6",
+    "html-to-text": "^6.0.0",
+    "marked": "^4.0.10",
     "moment": "^2.18.1",
     "snyk": "^1.36.2",
     "walkdir": "0.0.11"
